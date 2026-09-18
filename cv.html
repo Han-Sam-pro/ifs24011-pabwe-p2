@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Raka Pradana</title>
+<meta name="description" content="Curriculum Vitae digital Raka Pradana, Full-Stack Developer & Aspiring AI Engineer.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS 4 (Play CDN, wajib) -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<style type="text/tailwindcss">
+  @theme {
+    --color-ink: #102A43;
+    --color-inksoft: #486581;
+    --color-primary: #1E3A8A;
+    --color-accent: #0891B2;
+    --color-accentdeep: #0E7490;
+    --color-accentsoft: #CFFAFE;
+    --color-bg: #F0FDFA;
+    --color-line: #CFE8EC;
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "Public Sans", sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+</style>
+</head>
+<body class="bg-bg text-ink">
+
+<!-- ============ NAVBAR ============ -->
+<nav class="sticky top-0 z-50 bg-bg/90 backdrop-blur border-b border-line">
+  <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-display font-bold">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-accent">
+        <polyline points="2,15 8,15 11,5 15,25 18,15 26,15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Nadi AI
+    </a>
+    <div class="flex items-center gap-6 text-sm font-medium text-inksoft">
+      <a href="index.html" class="hover:text-ink transition">Beranda</a>
+      <a href="blog.html" class="hover:text-ink transition">Blog</a>
+      <a href="cv.html" class="text-ink">CV</a>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-12">
+
+  <!-- ============ HEADER PROFIL ============ -->
+  <section class="flex flex-col md:flex-row items-start md:items-center gap-6 pb-10 border-b border-line">
+    <div class="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-display font-semibold shrink-0">
+      RP
+    </div>
+    <div class="flex-1">
+      <h1 class="text-3xl font-display font-semibold">Raka Pradana</h1>
+      <p class="text-accentdeep font-medium mt-1">Full-Stack Developer &middot; Aspiring AI Engineer</p>
+
+      <div class="flex flex-wrap gap-x-5 gap-y-2 mt-4 text-sm text-inksoft">
+        <span class="flex items-center gap-1.5">✉️ raka.pradana@email.com</span>
+        <span class="flex items-center gap-1.5">📱 +62 812-3456-7890</span>
+        <span class="flex items-center gap-1.5">📍 Bandung, Indonesia</span>
+      </div>
+      <div class="flex flex-wrap gap-x-5 gap-y-2 mt-2 text-sm">
+        <a href="#" class="text-ink font-medium hover:text-accentdeep transition">github.com/rakapradana</a>
+        <a href="#" class="text-ink font-medium hover:text-accentdeep transition">linkedin.com/in/rakapradana</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RINGKASAN ============ -->
+  <section class="py-10 border-b border-line">
+    <h2 class="font-display font-semibold text-lg mb-3">Tentang Saya</h2>
+    <p class="text-inksoft leading-relaxed max-w-2xl">
+      Mahasiswa Teknik Informatika dengan minat pada pengembangan web dan penerapan AI untuk kebutuhan bisnis. Terbiasa bekerja dengan HTML, CSS, Bootstrap, dan Tailwind, serta mulai mendalami integrasi model bahasa besar ke dalam aplikasi web. Aktif mengikuti kompetisi dan hackathon tingkat universitas sebagai sarana belajar di luar kelas.
+    </p>
+  </section>
+
+  <!-- ============ PENDIDIKAN ============ -->
+  <section class="py-10 border-b border-line">
+    <h2 class="font-display font-semibold text-lg mb-4">Pendidikan</h2>
+    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+      <div>
+        <p class="font-medium">Universitas Teknologi Nusantara</p>
+        <p class="text-inksoft text-sm">S1 Teknik Informatika</p>
+      </div>
+      <p class="text-sm text-inksoft shrink-0">2022 — 2026</p>
+    </div>
+  </section>
+
+  <!-- ============ PENGALAMAN ============ -->
+  <section class="py-10 border-b border-line">
+    <h2 class="font-display font-semibold text-lg mb-5">Pengalaman</h2>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div>
+        <div class="flex items-baseline justify-between gap-2">
+          <p class="font-medium">Frontend Developer Intern</p>
+          <p class="text-xs text-inksoft shrink-0">Jun — Sep 2025</p>
+        </div>
+        <p class="text-sm text-inksoft mt-0.5">Studio Digital Karya</p>
+        <p class="text-sm text-inksoft mt-2 leading-relaxed">Membangun dan memelihara komponen antarmuka untuk tiga proyek klien menggunakan Bootstrap dan Tailwind, serta memperbaiki tampilan responsif di perangkat mobile.</p>
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between gap-2">
+          <p class="font-medium">Anggota Tim Pengembang</p>
+          <p class="text-xs text-inksoft shrink-0">2025</p>
+        </div>
+        <p class="text-sm text-inksoft mt-0.5">Hackathon Nasional "AI for Good"</p>
+        <p class="text-sm text-inksoft mt-2 leading-relaxed">Mengembangkan purwarupa chatbot edukasi bersama tim beranggotakan empat mahasiswa dalam waktu 48 jam, hingga masuk babak final.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEAHLIAN ============ -->
+  <section class="py-10 border-b border-line">
+    <h2 class="font-display font-semibold text-lg mb-4">Keahlian</h2>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">HTML</span>
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">CSS</span>
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">JavaScript</span>
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">Bootstrap 5</span>
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">Tailwind CSS</span>
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">Git &amp; GitHub</span>
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">Python (Dasar)</span>
+      <span class="px-3 py-1.5 rounded-full bg-accentsoft text-accentdeep text-sm font-medium">Dasar UI/UX</span>
+    </div>
+  </section>
+
+  <!-- ============ SERTIFIKAT ============ -->
+  <section class="py-10 border-b border-line">
+    <h2 class="font-display font-semibold text-lg mb-4">Sertifikat &amp; Penghargaan</h2>
+    <ul class="space-y-2 text-sm text-inksoft">
+      <li class="flex gap-2"><span class="text-accentdeep">•</span> Sertifikat Front-End Web Developer — Dicoding (2025)</li>
+      <li class="flex gap-2"><span class="text-accentdeep">•</span> Peserta Terbaik, Hackathon Nasional "AI for Good" (2025)</li>
+    </ul>
+  </section>
+
+  <!-- ============ PROYEK ============ -->
+  <section class="py-10">
+    <h2 class="font-display font-semibold text-lg mb-5">Proyek</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <a href="index.html" class="block p-5 rounded-xl border border-line hover:border-accent transition">
+        <p class="font-medium">Landing Page Nadi AI</p>
+        <p class="text-sm text-inksoft mt-1">Landing page jasa AI dibangun dengan HTML &amp; CSS murni, memakai CSS variables, Flexbox, dan Grid.</p>
+      </a>
+      <a href="blog.html" class="block p-5 rounded-xl border border-line hover:border-accent transition">
+        <p class="font-medium">Blog Nadi AI</p>
+        <p class="text-sm text-inksoft mt-1">Halaman daftar dan detail artikel bertema AI, dibangun dengan Bootstrap 5 dan Bootstrap Icons.</p>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t border-line py-6 text-center text-sm text-inksoft">
+  © 2026 Raka Pradana — dibuat untuk tugas praktikum web.
+</footer>
+
+</body>
+</html>

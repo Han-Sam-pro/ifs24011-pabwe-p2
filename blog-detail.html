@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG: Menggabungkan LLM dengan Data Perusahaan Anda — Nadi AI</title>
+<meta name="description" content="Penjelasan tentang Retrieval-Augmented Generation (RAG) dan bagaimana teknik ini membuat jawaban model bahasa besar berpijak pada data internal perusahaan.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 (wajib) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons (wajib) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- Penyesuaian kecil identitas brand -->
+<link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-md navbar-nadi sticky-top">
+  <div class="container py-2">
+    <a class="navbar-brand nadi-brand" href="index.html">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="2,15 8,15 11,5 15,25 18,15 26,15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Nadi AI
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Buka menu navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+        <li class="nav-item"><a class="nav-link" href="index.html#layanan">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#tentang">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ COVER ============ -->
+<div class="nadi-cover" style="height: 260px;">
+  <i class="bi bi-diagram-3" aria-hidden="true" style="font-size: 3rem;"></i>
+</div>
+
+<main class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <a href="blog.html" class="link-nadi small"><i class="bi bi-arrow-left" aria-hidden="true"></i> Kembali ke Blog</a>
+
+      <span class="badge badge-nadi rounded-pill mt-3">Generative AI</span>
+      <h1 class="fw-semibold mt-3" style="line-height:1.2;">RAG: Menggabungkan LLM dengan Data Perusahaan Anda</h1>
+
+      <div class="d-flex align-items-center gap-3 text-secondary small mt-3 pb-4 border-bottom">
+        <span><i class="bi bi-person" aria-hidden="true"></i> Dimas Prakoso</span>
+        <span><i class="bi bi-calendar3" aria-hidden="true"></i> 20 Agustus 2026</span>
+        <span><i class="bi bi-clock" aria-hidden="true"></i> 7 menit baca</span>
+      </div>
+
+      <article class="mt-4" style="font-size: 1.05rem; line-height: 1.75;">
+        <p>Model bahasa besar (LLM) sangat baik dalam merangkai kalimat, tetapi pengetahuannya berhenti di titik data pelatihannya berakhir. Untuk sebuah perusahaan, itu masalah besar: LLM tidak tahu apa isi katalog produk terbaru, kebijakan cuti karyawan, atau riwayat tiket pelanggan minggu lalu. Di sinilah Retrieval-Augmented Generation, atau RAG, berperan.</p>
+
+        <p>RAG bekerja dengan menggabungkan dua tahap. Pertama, sistem mencari potongan dokumen yang relevan dengan pertanyaan pengguna dari basis data internal — biasanya menggunakan pencarian berbasis makna (vector search), bukan sekadar kata kunci. Kedua, potongan dokumen tersebut disisipkan ke dalam instruksi yang dikirim ke LLM, sehingga jawaban yang dihasilkan berpijak pada data nyata perusahaan, bukan tebakan dari data pelatihan umum.</p>
+
+        <blockquote class="border-start border-4 ps-3 my-4 text-secondary fst-italic">
+          Jawaban yang baik dari AI perusahaan bukan yang paling lancar, tapi yang paling bisa dipertanggungjawabkan sumbernya.
+        </blockquote>
+
+        <p>Pendekatan ini punya keunggulan yang sulit ditandingi oleh fine-tuning penuh: dokumen internal bisa diperbarui kapan saja tanpa melatih ulang model, biaya implementasinya jauh lebih rendah, dan jawaban model bisa disertai kutipan sumber dokumen — sesuatu yang penting untuk audit dan kepatuhan di banyak industri.</p>
+
+        <h2 class="h4 mt-5 mb-3">Hal yang perlu diperhatikan sebelum menerapkan RAG</h2>
+        <ul>
+          <li class="mb-2"><strong>Kualitas dokumen sumber.</strong> Sistem RAG hanya sebaik dokumen yang diindeks — dokumen usang atau tidak terstruktur akan menghasilkan jawaban yang menyesatkan.</li>
+          <li class="mb-2"><strong>Strategi pemotongan teks (chunking).</strong> Potongan dokumen yang terlalu panjang atau terlalu pendek dapat menurunkan relevansi pencarian.</li>
+          <li class="mb-2"><strong>Evaluasi berkelanjutan.</strong> Perlu ada metrik untuk mengukur apakah jawaban benar-benar didukung oleh dokumen yang diambil, bukan hasil karangan model.</li>
+        </ul>
+
+        <div class="alert d-flex align-items-start gap-2 mt-4" style="background: var(--nadi-accent-soft); border: none;">
+          <i class="bi bi-info-circle-fill text-nadi-accent mt-1" aria-hidden="true"></i>
+          <div>RAG mengurangi risiko halusinasi model, tetapi tidak menghilangkannya sepenuhnya. Proses tinjauan manusia tetap disarankan untuk kasus penggunaan dengan risiko tinggi, seperti keputusan medis atau finansial.</div>
+        </div>
+
+        <p class="mt-4">Bagi bisnis yang baru mulai menjajaki AI, RAG sering menjadi titik awal yang lebih realistis dibanding melatih model dari nol. Tim Nadi AI biasanya memulai proyek RAG dengan basis dokumen yang sudah dimiliki klien — SOP, FAQ, atau katalog produk — sebelum memperluas ke sumber data lain.</p>
+      </article>
+
+      <!-- ============ ARTIKEL TERKAIT ============ -->
+      <section class="mt-5 pt-4 border-top">
+        <h2 class="h5 mb-3">Artikel Terkait</h2>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card h-100 card-nadi border">
+              <div class="card-body">
+                <span class="badge badge-nadi rounded-pill mb-2">Generative AI</span>
+                <h3 class="h6"><a href="blog.html" class="link-nadi">Apa Itu Generative AI dan Mengapa Bisnis Perlu Peduli</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 card-nadi border">
+              <div class="card-body">
+                <span class="badge badge-nadi rounded-pill mb-2">MLOps</span>
+                <h3 class="h6"><a href="blog.html" class="link-nadi">MLOps: Menjaga Model AI Tetap Andal di Produksi</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ KOMENTAR ============ -->
+      <section class="mt-5 pt-4 border-top">
+        <h2 class="h5 mb-3">Komentar (2)</h2>
+
+        <div class="d-flex gap-3 mb-4">
+          <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light border" style="width:40px;height:40px;flex-shrink:0;">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </span>
+          <div>
+            <p class="mb-1 fw-semibold small">Ayu Kartika</p>
+            <p class="text-secondary small mb-0">Penjelasan chunking-nya membantu banget, kebetulan tim saya lagi eksperimen RAG untuk basis pengetahuan internal.</p>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 mb-4">
+          <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light border" style="width:40px;height:40px;flex-shrink:0;">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </span>
+          <div>
+            <p class="mb-1 fw-semibold small">Fajar Nugroho</p>
+            <p class="text-secondary small mb-0">Setuju soal evaluasi berkelanjutan — di proyek kami, itu bagian yang paling sering terlewat.</p>
+          </div>
+        </div>
+
+        <form action="#" onsubmit="return false;" class="d-flex gap-3">
+          <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light border" style="width:40px;height:40px;flex-shrink:0;">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </span>
+          <div class="flex-grow-1">
+            <label for="komentar" class="form-label">Komentar</label>
+            <textarea id="komentar" name="komentar" class="form-control" rows="3" placeholder="Tulis komentar Anda..."></textarea>
+            <button type="submit" class="btn btn-nadi btn-sm mt-2">Kirim Komentar</button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer py-4">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <a href="index.html" class="nadi-brand" style="font-size: 0.95rem;">
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="2,15 8,15 11,5 15,25 18,15 26,15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Nadi AI
+    </a>
+    <div class="d-flex gap-3 small">
+      <a href="index.html" class="link-nadi">Beranda</a>
+      <a href="blog.html" class="link-nadi">Blog</a>
+      <a href="cv.html" class="link-nadi">CV</a>
+    </div>
+    <p class="text-secondary small mb-0">© 2026 Nadi AI</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

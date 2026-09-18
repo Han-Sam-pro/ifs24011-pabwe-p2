@@ -1,0 +1,154 @@
+/* =========================================================
+   Nadi AI — Brand overrides for Bootstrap pages
+   Small customizations only; Bootstrap remains the styling
+   system for blog.html and blog-detail.html.
+   ========================================================= */
+
+:root {
+  --nadi-ink: #102A43;
+  --nadi-ink-soft: #486581;
+  --nadi-primary: #1E3A8A;
+  --nadi-accent: #0891B2;
+  --nadi-accent-deep: #0E7490;
+  --nadi-accent-soft: #CFFAFE;
+  --nadi-bg: #F0FDFA;
+  --nadi-line: #CFE8EC;
+}
+
+body {
+  font-family: "Public Sans", "Segoe UI", sans-serif;
+  background: var(--nadi-bg);
+  color: var(--nadi-ink);
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+/* Brand mark */
+.nadi-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--nadi-ink) !important;
+}
+
+.nadi-brand svg {
+  color: var(--nadi-accent);
+}
+
+/* Navbar */
+.navbar-nadi {
+  background: var(--nadi-bg);
+  border-bottom: 1px solid var(--nadi-line);
+}
+
+.navbar-nadi .nav-link {
+  color: var(--nadi-ink-soft);
+  font-weight: 500;
+}
+
+.navbar-nadi .nav-link.active,
+.navbar-nadi .nav-link:hover {
+  color: var(--nadi-ink);
+}
+
+/* Buttons / links in brand accent */
+.btn-nadi {
+  background: var(--nadi-accent-deep);
+  border-color: var(--nadi-accent-deep);
+  color: #fff;
+}
+
+.btn-nadi:hover {
+  background: #155E75;
+  border-color: #155E75;
+  color: #fff;
+}
+
+.text-nadi-accent {
+  color: var(--nadi-accent-deep) !important;
+}
+
+.link-nadi {
+  color: var(--nadi-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-nadi:hover {
+  color: var(--nadi-accent);
+}
+
+/* Category badges use one consistent accent tint instead of Bootstrap's stock palette */
+.badge-nadi {
+  background: var(--nadi-accent-soft);
+  color: var(--nadi-accent-deep);
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+/* Cover placeholder blocks (no external images required) */
+.nadi-cover {
+  background: linear-gradient(135deg, var(--nadi-primary), #155E75);
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Category filter pills */
+.filter-pill {
+  border: 1px solid var(--nadi-line);
+  background: #fff;
+  color: var(--nadi-ink-soft);
+  border-radius: 999px;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.filter-pill:hover {
+  border-color: var(--nadi-accent);
+  color: var(--nadi-ink);
+}
+
+.filter-pill.active {
+  background: var(--nadi-ink);
+  border-color: var(--nadi-ink);
+  color: #fff;
+}
+
+.card-nadi {
+  border-color: var(--nadi-line);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-nadi:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(23, 27, 38, 0.08);
+}
+
+footer.site-footer {
+  border-top: 1px solid var(--nadi-line);
+  background: var(--nadi-bg);
+}
+
+/* ---------- Analogous blue–cyan palette ---------- */
+:root {
+  --nadi-secondary: #06B6D4;
+  --nadi-tertiary: #14B8A6;
+}
+
+.nadi-cover {
+  background: linear-gradient(135deg, var(--nadi-primary), #155E75, var(--nadi-secondary));
+}
+
+/* Bootstrap's default muted gray is marginally below AA contrast on our
+   tinted background; use the brand's own muted tone instead. */
+.text-secondary {
+  color: var(--nadi-ink-soft) !important;
+}
